@@ -4,7 +4,14 @@ import bodyParser from 'body-parser'
 
 
 //db setup
-const db = mongoose.connect('localhost:27017/bookAPI')
+let db
+
+if (process.env.ENV = 'Test') 
+    db = mongoose.connect('localhost:27017/bookAPI_test')
+ else 
+    db = mongoose.connect('localhost:27017/bookAPI')
+
+
 
 import Book from './models/Book'
 
@@ -29,3 +36,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log('Running on port ' + port)
 })
+
+module.exports = app;

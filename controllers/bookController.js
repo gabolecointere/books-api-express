@@ -8,9 +8,8 @@ const bookController = (Book) => {
             res.send('Title is required')
         } else {
             book.save()
-            res.status(201)
-            res.send(book)
-        }   
+            res.status(201).send(book)
+        }
     }
 
     const get = (req, res) => {
