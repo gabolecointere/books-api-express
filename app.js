@@ -4,14 +4,7 @@ import bodyParser from 'body-parser'
 
 
 //db setup
-let db
-
-if (process.env.ENV = 'Test') 
-    db = mongoose.connect('localhost:27017/bookAPI_test')
- else 
-    db = mongoose.connect('localhost:27017/bookAPI')
-
-
+const db = mongoose.connect('localhost:27017/bookAPI')
 
 import Book from './models/Book'
 
